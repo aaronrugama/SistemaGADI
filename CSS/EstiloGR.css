@@ -1,0 +1,121 @@
+/* ----------- BODY ----------- */
+body.Incio {
+    background-color: aliceblue;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+/* ----------- NAVBAR ----------- */
+.Navbar {
+    width: 220px;
+    background-color: #ffffff;
+    color: #060023;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: fixed;           
+    left: 0;
+    top: 0;
+}
+
+.titulo {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3000FF; 
+    margin-bottom: 15px;    
+}
+
+.titulo img {
+    width: 50px;
+}
+
+.titulo p {
+    margin: 0;
+    font-weight: 600;
+    color: #060023;
+}
+
+.Navbar nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.Navbar nav ul li {
+    margin: 8px 0;
+}
+
+.Navbar nav ul li a {
+    font-family: "Inter", sans-serif;
+    display: block;    
+    color: #060023;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.5s ease;
+}
+
+.Navbar nav ul li a:hover,
+.Navbar nav ul li a.active {
+    background-color: #2100b6;
+    color: #f0f8ff;
+    padding-left: 20px;
+}
+
+/* ----------- HEADER ----------- */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 69px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: calc(100% - 220px);
+    background-color: white;
+    border-bottom: 2px solid #3000FF;
+    padding-right: 20px;
+    z-index: 10;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+    color: #060023;
+    font-size: 32px;
+    transition: 0.3s ease;
+    margin-right: 5px;
+}
+
+.material-symbols-outlined:hover {
+    color: #3000FF;
+}
+
+/* ----------- MAIN ----------- */
+.main {
+    margin-left: 270px; 
+    margin-top: 69px;   
+    padding: 20px;
+    width: calc(100% - 220px); 
+    min-height: calc(100vh - 69px);
+    box-sizing: border-box;
+}
+
+/* ----------- INFO ----------- */
+.Info h1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #140169;
+}
+
+.Info p{
+    font-family: "Inter", sans-serif;
+    color: #919bb5;    
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/CSS/EstiloRR.css">
+        <title>Registrar Reparaciones</title>
+    </head>
+    <body class="Incio" data-role="">
+
+        <div class="header">
+            <span class="material-symbols-outlined" onclick="cerrarSesion()">logout</span>
+        </div>
+
+        <div class="Navbar">      
+            <div class="titulo">
+                <img src="/IMG/Logo.png" alt="Logo">
+                <p>Sistema GADI</p>
+            </div>
+            <hr class="Barra">
+            <nav>
+                <ul>
+                    <li><a id="link-inicio" href="Inicio.html">Incio</a></li>
+                    <li><a id="link-ventas" href="Registrar_Venta.html">Registrar Venta</a></li>
+                    <li><a id="link-reparaciones" href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
+                    <li><a  id="link-egresos" href="Registrar_Egresos.html">Registrar Egresos</a></li>
+                    <li><a id="link-productos" href="Productos.html">Productos</a></li>
+                    <li><a id="link-ganancias"  href="ConfigGanancias.html">Configurar Ganancias</a></li>
+                    <li><a id="link-reportes" href="Generar_Reporte.html">Generar Reporte</a></li>
+                    <li><a id="link-transacciones" href="Transacciones.html">Transacciones</a></li>
+                    <li><a id="link-usuarios" href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
+                    <li><a id="Link-roles" href="Roles.html">Roles</a></li>
+                    <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>  
+
+    <div class="main">
+
+        <div class="Info">
+            <h1>Registrar venta por Reparacion</h1>
+            <p>Aqui usted puede ingresar cualquier venta de reparaciones</p>
+        </div>
+
+        <div class="RegistroV">
+
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="columna-izq">
+
+                <div class="form">
+                    <label for="MontoP">Registrar Monto</label>
+                    <input type="text" name="MontoP" id="MontoP" class="registro" placeholder="0.00$">
+                </div>
+
+                <p class="itbms">itbm: 0.70$</p>
+
+                <div class="form">
+                    <label for="Selector">Productos</label>
+                    <select class="Selector" id="TipoReparacion" required>
+                        <option value="">Seleccione los tipo de Reparacion</option>
+                    </select>
+                </div>
+                
+                <div class="form">
+                    <label for="RegitrarOservaciones">Registrar Oservaciones</label>
+                    <input type="text" name="MontoP" id="RegitrarOservaciones" class="registro" placeholder="Observacion">
+                </div>
+
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="columna-der">
+
+                <div class="form">
+                    <label for="DiaActual">Fecha de hoy</label>
+                    <p class="fecha">:<span id="fecha"></span></p>
+                </div>
+
+                <div class="grupo-opciones-caja">
+
+                    <label class="opcion-caja">
+                        <input type="radio" name="tipoPago" value="1">
+                        <span class="texto">Tarjeta de Débito</span>
+                    </label>
+
+                    <label class="opcion-caja">
+                        <input type="radio" name="tipoPago" value="2">
+                        <span class="texto">Tarjeta de Crédito</span>
+                    </label>
+
+                    <label class="opcion-caja">
+                        <input type="radio" name="tipoPago" value="3">
+                        <span class="texto">Yappy</span>
+                    </label>
+
+                    <label class="opcion-caja">
+                        <input type="radio" name="tipoPago" value="4">
+                        <span class="texto">Efectivo</span>
+                    </label>
+
+                            <div class="form">
+                    <label for="Nfolio">Numero de Folio</label>
+                    <input type="text" name="NumeroFolio" id="Nfolio" class="registro" placeholder="Folio">
+                </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="botones">
+            <button type="button" class="btnRegistrar" id="RegistraVReparacion">Registrar Venta</button>
+            <button type="button" class="btnCancelar" id="CancelarVReparacion">Cancelar</button>
+        </div>
+
+    </div>
+
+        <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
+    <script src="/JS/Sesion.js"></script>
+</body>
+</html>

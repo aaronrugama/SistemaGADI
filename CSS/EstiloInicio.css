@@ -1,0 +1,469 @@
+/* ----------- BODY ----------- */
+body.Incio {
+    background-color: aliceblue;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+/* ----------- NAVBAR ----------- */
+.Navbar {
+    width: 220px;
+    background-color: #ffffff;
+    color: #060023;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: fixed;           
+    left: 0;
+    top: 0;
+}
+
+.titulo {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3000FF; 
+    margin-bottom: 15px;    
+}
+
+.titulo img {
+    width: 50px;
+}
+
+.titulo p {
+    margin: 0;
+    font-weight: 600;
+    color: #060023;
+}
+
+.Navbar nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.Navbar nav ul li {
+    margin: 8px 0;
+}
+
+.Navbar nav ul li a {
+    font-family: "Inter", sans-serif;
+    display: block;    
+    color: #060023;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.5s ease;
+}
+
+.Navbar nav ul li a:hover,
+.Navbar nav ul li a.active {
+    background-color: #2100b6;
+    color: #f0f8ff;
+    padding-left: 20px;
+}
+
+/* ----------- HEADER ----------- */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 69px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: calc(100% - 220px);
+    background-color: white;
+    border-bottom: 2px solid #3000FF;
+    padding-right: 20px;
+    z-index: 10;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+    color: #060023;
+    font-size: 32px;
+    transition: 0.3s ease;
+    margin-right: 5px;
+}
+
+.material-symbols-outlined:hover {
+    color: #3000FF;
+}
+
+/* ----------- MAIN ----------- */
+.main {
+    margin-left: 270px; 
+    margin-top: 69px;   
+    padding: 20px;
+    width: calc(100% - 220px); 
+    min-height: calc(100vh - 69px);
+    box-sizing: border-box;
+}
+
+/* ----------- INFO ----------- */
+.Info h1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #140169;
+}
+
+.Info p{
+    font-family: "Inter", sans-serif;
+    color: #919bb5;    
+}
+
+/* ----------- REGISTRO DE VENTA ----------- */
+.RegistroV{
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px #2f00ff31;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: flex-start;  
+    min-height: 500px;  
+}
+
+.form label{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: #2100b6;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 4px;
+}
+
+.RegistroV .registro{
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    background-color: aliceblue;
+    cursor: pointer;
+    margin-top: 10px; 
+}
+
+.RegistroV .registro:hover{
+    background-color: #d3e0ff;
+}
+
+.RegistroV .itbms{
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    background-color: aliceblue;
+    color: #140169;
+    padding: 10px;
+    box-shadow: 0px 5px 5px #008cff3b;
+    width: 300px;
+}
+
+.RegistroV .Selector{
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #007bff;
+    background-color: #f4f7ff;
+    cursor: pointer;       
+    transition: 0.2s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ----------- CONTADOR ----------- */
+.contador {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-cantidad {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    border: none;
+    border-radius: 100px;
+    background-color: aliceblue;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-cantidad:hover {
+    background-color: #8dc2ff;
+}
+
+#cantidad {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* ----------- GRUPO DE PAGO ----------- */
+.grupo-opciones-caja {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.opcion-caja {   
+    font-family: "Inter", sans-serif;
+    border: 2px solid #5384ff;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.opcion-caja input {
+    display: none;
+}
+
+.opcion-caja input:checked + .texto,
+.opcion-caja:has(input:checked) {
+    background-color: #007bff;
+    border-color: #005fcc;
+    color: #ffffff;
+}
+
+/* ----------- FECHA ----------- */
+.titulo-fechas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-family: "Inter", sans-serif;
+}
+
+.titulo-fechas h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.titulo-fechas input {
+    font-family: "Inter", sans-serif;    
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* ----------- BOTONES ----------- */
+.botones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones .btnRegistrar{
+    font-family: "Inter", sans-serif;
+    font-size: 20px;    
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #5384ff;
+    color: #ffffff;
+    margin-right: 6px;
+    transition: all 0.2s ease;    
+}
+
+.botones .btnCancelar{
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #e3e6ee;
+    color: #140169;
+    margin-left: 6px;
+    transition: all 0.2s ease;    
+}
+
+.botones .btnRegistrar:hover{
+    background-color: #2100b6;
+}
+
+.botones .btnCancelar:hover{
+    background-color: #9c97b4;
+}
+
+.dashboard{
+    display: flex;
+    flex-wrap: wrap;   
+    gap: 20px;         
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.dashboard p{
+    color: #bdc1cb;
+}
+
+.tarjetaIngrsos{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px  6px 10px#2f00ff31 ;
+    font-family: "Inter", sans-serif;
+    transition: 0.5s ease;    
+}
+
+.tarjetaIngrsos #ingresos{
+    font-size: 50px;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.tarjetaIngrsos h1,
+.tarjetaIngrsos .material-symbols-outlined{
+    color: #00d535;
+}
+
+
+.tarjetaEgresos{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 6px 10px #2f00ff31;
+    font-family: "Inter", sans-serif;
+    transition: 0.5s ease;    
+}
+
+.tarjetaEgresos #egresos{
+    font-size: 50px;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.tarjetaEgresos h1, 
+.tarjetaEgresos .material-symbols-outlined{
+    color: #ffbb00;
+}
+
+.tarjetaBalance{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 6px 10px #2f00ff31;
+    font-family: "Inter", sans-serif;
+    transition: 0.5s ease;
+}
+
+.tarjetaBalance #balance{
+    font-size: 50px;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.tarjetaBalance h1, 
+.tarjetaBalance .material-symbols-outlined{
+    color: #3000FF;
+}
+
+.tarjetaBalance:hover,.tarjetaEgresos:hover,.tarjetaIngrsos:hover{
+    transform: scale(1.05);    
+}
+
+/* ----------- RESPONSIVE TABLET ----------- */
+@media (max-width: 900px) {
+    .RegistroV {
+        grid-template-columns: 1fr; 
+        padding: 20px;
+    }
+
+    .Navbar {
+        width: 180px;
+    }
+
+    .main {
+        margin-left: 200px;
+    }
+
+    .header {
+        width: calc(100% - 180px);
+    }
+}
+
+/* ----------- RESPONSIVE MÓVIL ----------- */
+@media (max-width: 600px) {
+
+    body.Incio {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .Navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid #3000FF;
+    }
+
+    .header {
+        position: relative;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .main {
+        margin: 0;
+        padding: 15px;
+        width: 100%;
+    }
+
+    .RegistroV {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .Selector {
+        width: 100% !important;
+    }
+
+    .contador {
+        justify-content: center;
+    }
+
+    #cantidad {
+        font-size: 28px;
+    }
+
+    .botones {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

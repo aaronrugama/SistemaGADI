@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/CSS/EstiloGU.css">
+        <title>Gestionar Usuario</title>
+    </head>
+    <body class="Incio" data-role="1">
+
+        <div class="header">
+            <span class="material-symbols-outlined" onclick="cerrarSesion()">logout</span>
+        </div>
+
+        <div class="Navbar">      
+            <div class="titulo">
+                <img src="/IMG/Logo.png" alt="Logo">
+                <p>Sistema GADI</p>
+            </div>
+            <hr class="Barra">
+            <nav>
+                <ul>
+                    <li><a id="link-inicio" href="Inicio.html">Incio</a></li>
+                    <li><a id="link-ventas" href="Registrar_Venta.html">Registrar Venta</a></li>
+                    <li><a id="link-reparaciones" href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
+                    <li><a  id="link-egresos" href="Registrar_Egresos.html">Registrar Egresos</a></li>
+                    <li><a id="link-productos" href="Productos.html">Productos</a></li>
+                    <li><a id="link-ganancias"  href="ConfigGanancias.html">Configurar Ganancias</a></li>
+                    <li><a id="link-reportes" href="Generar_Reporte.html">Generar Reporte</a></li>
+                    <li><a id="link-transacciones" href="Transacciones.html">Transacciones</a></li>
+                    <li><a id="link-usuarios" href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
+                    <li><a id="Link-roles" href="Roles.html">Roles</a></li>
+                    <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>  
+
+        <div class="main">
+
+            <div class="Info">
+                <h1>Gestionar Usuario</h1>
+                <p>Administrar todos los usuarios del sistema, incluyendo roles y credenciales</p>
+            </div>
+            
+            <div class="grupo-opciones-caja">
+                <div class="form">
+                    <label for="MontoP">Usuario del Sistemas</label>
+                    <input type="text" name="MontoP" id="MontoP" class="registro" placeholder="Buscar por nombre o cedula">
+                </div>
+                
+                <button type="button" class="btnRegistrar" id="RegistrarU">Registrar Usuario</button>
+            </div>
+
+            <div class="RegitroV">
+                    <!-- ENCABEZADOS -->
+                <div class="usuarios-header">
+                    <span>Nombre</span>
+                    <span>Cédula</span>
+                    <span>Correo</span>
+                    <span>Estado</span>
+                    <span>Acciones</span>
+                </div>
+
+                <!-- LISTA DONDE SE AGREGAN LOS USUARIOS -->
+                <div id="usuarios-lista">
+
+                    <!-- EJEMPLO DE USUARIO -->
+                    <div class="usuario-card">
+
+                        <!-- NOMBRE + FOTO -->
+                        <div class="col-nombre">
+                            <img src="https://i.pravatar.cc/60?img=3" class="usuario-img">
+                            <div>
+                                <h3 class="usuario-nombre">Lionel UwU</h3>
+                            </div>
+                        </div>
+
+                        <!-- CÉDULA -->
+                        <div class="col-cedula">
+                            8-123-456
+                        </div>
+
+                        <!-- CORREO -->
+                        <div class="col-correo">
+                            lionel@example.com
+                        </div>
+
+                        <!-- ESTADO -->
+                        <div class="col-estado">
+                            <select class="estado-select">
+                                <option value="activo" selected>Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                            </select>
+                        </div>
+
+                        <!-- ACCIONES -->
+                        <div class="col-acciones">
+                            <button class="btn-opciones">
+                                <span class="material-symbols-outlined">more_vert</span>
+                            </button>
+
+                            <div class="menu-opciones oculto">
+                                <p class="opcion"><span class="material-symbols-outlined">edit</span> Editar</p>
+                                <p class="opcion"><span class="material-symbols-outlined">delete</span> Eliminar</p>
+                                <p class="opcion"><span class="material-symbols-outlined">visibility</span> Ver</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OVERLAY OSCURO -->
+            <div id="overlay" class="overlay oculto"></div>
+
+            <!-- MODAL DE AGREGAR USUARIO -->
+            <div id="modalUsuario" class="modal oculto">
+
+                <h2>Agregar usuario</h2>
+
+                <div class="modal-form">
+                    <div class="campo">
+                        <label>Nombre</label>
+                        <input type="text" id="nombreInput" placeholder="Texto">
+                    </div>
+
+                    <div class="campo">
+                        <label>Apellido</label>
+                        <input type="text" id="apellidoInput" placeholder="Texto">
+                    </div>
+
+                    <div class="campo">
+                        <label>Cédula</label>
+                        <input type="text" id="cedulaInput" placeholder="Texto">
+                    </div>
+
+                    <div class="campo">
+                        <label>Correo</label>
+                        <input type="email" id="correoInput" placeholder="Texto">
+                    </div>
+
+                    <div class="campo">
+                        <label>Rol</label>
+                        <input type="text" id="rolInput" placeholder="Texto">
+                    </div>
+                </div>
+
+                <button id="btnGuardarUsuario" class="btnGuardar">
+                    <span class="material-symbols-outlined">person_add</span>
+                    Agregar nuevo usuario
+                </button>
+            </div>
+        </div>
+
+        <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
+        <script src="/JS/Sesion.js"></script>
+    </body>
+</html>

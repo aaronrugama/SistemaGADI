@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/EstiloGR.css">
+    <title>Productos</title>
+</head>
+<body class="Incio" data-role="">
+    <div class="header">
+        <span class="material-symbols-outlined" onclick="cerrarSesion()">logout</span>
+    </div>
+
+    <div class="Navbar">      
+        <div class="titulo">
+            <img src="/IMG/Logo.png" alt="Logo">
+            <p>Sistema GADI</p>
+        </div>
+        <hr class="Barra">
+        <nav>
+            <ul>
+                <li><a id="link-inicio" href="Inicio.html">Incio</a></li>
+                <li><a id="link-ventas" href="Registrar_Venta.html">Registrar Venta</a></li>
+                <li><a id="link-reparaciones" href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
+                <li><a  id="link-egresos" href="Registrar_Egresos.html">Registrar Egresos</a></li>
+                <li><a id="link-productos" href="Productos.html">Productos</a></li>
+                <li><a id="link-ganancias"  href="ConfigGanancias.html">Configurar Ganancias</a></li>
+                <li><a id="link-reportes" href="Generar_Reporte.html">Generar Reporte</a></li>
+                <li><a id="link-transacciones" href="Transacciones.html">Transacciones</a></li>
+                <li><a id="link-usuarios" href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
+                <li><a id="Link-roles" href="Roles.html">Roles</a></li>
+                <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </div>  
+
+    <div class="main"></div>
+
+        <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
+        <script src="/JS/Sesion.js"></script>
+</body>
+</html>
