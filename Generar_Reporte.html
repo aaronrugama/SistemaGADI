@@ -1,46 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/CSS/EstiloGR.css">
-        <title>Generar Reporte</title>
-    </head>
-    <body class="Incio" data-role="1">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/EstiloGR.css">
+    <title>Generar Reporte</title>
+</head>
 
-        <div class="header">
-            <span class="material-symbols-outlined" onclick="cerrarSesion()">logout</span>
+<body class="Incio" data-role="1">
+
+    <div class="header">
+        <span class="material-symbols-outlined" onclick="cerrarSesion()">logout</span>
+    </div>
+
+    <div class="Navbar">      
+        <div class="titulo">
+            <img src="/IMG/Logo.png" alt="Logo">
+            <p>Sistema GADI</p>
+        </div>
+        <hr class="Barra">
+        <nav>
+            <ul>
+                <li><a id="link-inicio" href="Inicio.html">Incio</a></li>
+                <li><a id="link-ventas" href="Registrar_Venta.html">Registrar Venta</a></li>
+                <li><a id="link-reparaciones" href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
+                <li><a id="link-egresos" href="Registrar_Egresos.html">Registrar Egresos</a></li>
+                <li><a id="link-productos" href="Productos.html">Productos</a></li>
+                <li><a id="link-ganancias" href="ConfigGanancias.html">Configurar Ganancias</a></li>
+                <li><a id="link-reportes" class="active" href="Generar_Reporte.html">Generar Reporte</a></li>
+                <li><a id="link-transacciones" href="Transacciones.html">Transacciones</a></li>
+                <li><a id="link-usuarios" href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
+                <li><a id="Link-roles" href="Roles.html">Roles</a></li>
+                <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </div>  
+
+    <div class="main">
+        <div class="Info">
+            <h1>Reportes</h1>
+            <p>Registros de reportes generados</p> 
         </div>
 
-        <div class="Navbar">      
-            <div class="titulo">
-                <img src="/IMG/Logo.png" alt="Logo">
-                <p>Sistema GADI</p>
+        <div class="acciones-superiores">
+            <button id="btnAbrirModal">Generar Reporte</button>
+        </div>
+        <div style="overflow-x: auto;">
+        <table class="tabla-reportes">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Fecha Reporte</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Fin</th>
+                    <th>Total Ingreso</th>
+                    <th>Total Egreso</th>
+                    <th>Ganancia Taller</th>
+                    <th>Ganancia Empleado</th>
+                    <th>Fecha Creación</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tbodyReportes">
+                <!-- Las filas se insertan por JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="modalReporte" class="modal">
+        <div class="modal-contenido">
+            <h2>Generar Reporte</h2>
+
+            <label>Fecha Inicio:</label>
+            <input type="date" id="fechaInicio">
+
+            <label>Fecha Fin:</label>
+            <input type="date" id="fechaFin">
+
+            <div class="modal-buttons">
+                <button id="btnCrearReporte">Crear</button>
+                <button id="btnCerrarModal">Cancelar</button>
             </div>
-            <hr class="Barra">
-            <nav>
-                <ul>
-                    <li><a id="link-inicio" href="Inicio.html">Incio</a></li>
-                    <li><a id="link-ventas" href="Registrar_Venta.html">Registrar Venta</a></li>
-                    <li><a id="link-reparaciones" href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
-                    <li><a  id="link-egresos" href="Registrar_Egresos.html">Registrar Egresos</a></li>
-                    <li><a id="link-productos" href="Productos.html">Productos</a></li>
-                    <li><a id="link-ganancias"  href="ConfigGanancias.html">Configurar Ganancias</a></li>
-                    <li><a id="link-reportes" href="Generar_Reporte.html">Generar Reporte</a></li>
-                    <li><a id="link-transacciones" href="Transacciones.html">Transacciones</a></li>
-                    <li><a id="link-usuarios" href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
-                    <li><a id="Link-roles" href="Roles.html">Roles</a></li>
-                    <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
-                </ul>
-            </nav>
-        </div>  
+        </div>
+    </div>
 
-        <div class="main"></div>
-
-        <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
-        <script src="/JS/Sesion.js"></script>
-    </body>
+    <script src="/JS/Sesion.js"></script>
+    <script src="/JS/GenerarReporte.js"></script>
+</body>
 </html>
