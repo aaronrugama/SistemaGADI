@@ -1,0 +1,359 @@
+/*body*/
+body.Incio {
+    background-color: aliceblue;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    font-family: "Inter", sans-serif;
+}
+
+/*navbar*/
+.Navbar {
+    width: 220px;
+    background-color: #ffffff;
+    color: #060023;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: fixed;           
+    left: 0;
+    top: 0;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3000FF; 
+    margin-bottom: 15px;    
+}
+
+.titulo img {
+    width: 50px;
+}
+
+.titulo p {
+    margin: 0;
+    font-weight: 600;
+    color: #060023;
+}
+
+.Navbar nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.Navbar nav ul li {
+    margin: 8px 0;
+}
+
+.Navbar nav ul li a {
+    display: block;    
+    color: #060023;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.5s ease;
+}
+
+.Navbar nav ul li a:hover{
+    background-color: #2100b6;
+    color: #f0f8ff;
+    padding-left: 20px;
+}
+.Navbar nav ul li a.active {
+    background-color: #2100b6;
+    color: #f0f8ff;
+    padding-left: 20px;
+}
+
+/*header*/
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 69px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: calc(100% - 220px);
+    background-color: white;
+    border-bottom: 2px solid #3000FF;
+    padding-right: 20px;
+    z-index: 10;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+    color: #060023;
+    font-size: 32px;
+    transition: 0.3s ease;
+    margin-right: 5px;
+}
+
+.material-symbols-outlined:hover {
+    color: #3000FF;
+}
+
+/*main*/
+.main {
+    margin-left: 270px; 
+    margin-top: 69px;   
+    padding: 20px;
+    width: calc(100% - 220px); 
+    min-height: calc(100vh - 69px);
+    box-sizing: border-box;
+}
+
+/*info*/
+.Info h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #140169;
+}
+
+.Info p {
+    color: #919bb5;    
+}
+
+/*formulario*/
+.formulario-registro {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 5px #2f00ff31;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: flex-start;  
+    min-height: 400px;  
+    display: none;
+}
+
+.formulario-registro .form label {
+    font-weight: 600;
+    font-size: 28px;
+    color: #2100b6;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6px;   
+    gap: 4px;
+}
+
+.formulario-registro .registro{
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    background-color: aliceblue;
+    cursor: pointer;
+    margin-top: 6px;        
+    margin-bottom: 22px;   
+}
+.formulario-registro .Selector {
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    background-color: aliceblue;
+    cursor: pointer;
+    margin-top: 6px;        
+    margin-bottom: 22px;   
+}
+
+.formulario-registro .registro:hover{
+    background-color: #d3e0ff;
+}
+.formulario-registro .Selector:hover {
+    background-color: #d3e0ff;
+}
+
+/*botones*/
+.botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.botones .btnRegistrar {
+    font-size: 20px;    
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    cursor: pointer;
+    background-color: #5384ff;
+    color: #ffffff;
+    transition: all 0.2s ease;    
+}
+
+.botones .btnCancelar {
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 20px;
+    cursor: pointer;
+    background-color: #e3e6ee;
+    color: #140169;
+    transition: all 0.2s ease;    
+}
+
+.botones .btnRegistrar:hover {
+    background-color: #2100b6;
+}
+
+.botones .btnCancelar:hover {
+    background-color: #9c97b4;
+}
+
+/*acciones*/
+.acciones-arriba {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; 
+}
+
+.acciones-izquierda input {
+    font-size: 18px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    outline: none;
+    transition: 0.2s ease;
+    width: 180px;
+}
+
+.acciones-izquierda input:focus {
+    border-color: #2100b6;
+    box-shadow: 0 0 5px #2100b6;
+}
+
+.acciones-arriba button {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.acciones-arriba #btnNuevo {
+    background-color: #5384ff;
+    color: #fff;
+}
+
+.acciones-arriba #btnNuevo:hover {
+    background-color: #2100b6;
+}
+
+.acciones-arriba #btnEliminar {
+    background-color: #e3e6ee;
+    color: #140169;
+}
+
+.acciones-arriba #btnEliminar:hover {
+    background-color: #9c97b4;
+}
+
+/*tabla ganancia*/
+.tabla-ganancia {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 5px 5px #2f00ff31;
+    overflow-x: auto;
+}
+
+.tabla-ganancia table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden; 
+}
+
+.tabla-ganancia th{
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.tabla-ganancia td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-ganancia th {
+    background-color: #2100b6;
+    color: #fff;
+    font-weight: 600;
+}
+
+.tabla-ganancia th:first-child {
+    border-top-left-radius: 20px;
+}
+
+.tabla-ganancia th:last-child {
+    border-top-right-radius: 20px;
+}
+
+.tabla-ganancia tr:hover {
+    background-color: #d3e0ff;
+}
+
+.tabla-ganancia button.btnEditar {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #5384ff;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.tabla-ganancia button.btnEditar:hover {
+    background-color: #2100b6;
+}
+
+/*responsive*/
+@media (max-width: 900px) {
+    .tabla-ganancia table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tabla-ganancia table {
+        font-size: 12px;
+    }
+
+    .tabla-ganancia th, .tabla-ganancia td {
+        padding: 8px 5px;
+    }
+
+    .tabla-ganancia button.btnEditar {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}

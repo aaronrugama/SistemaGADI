@@ -1,47 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/CSS/EstiloGR.css">
-        <title>Distribucion de Ganancias</title>
-    </head>
-    <body class="Incio" data-role="1">
-        <div class="header">
-            <span class="material-symbols-outlined" onclick="cerrarSesion()">logout</span>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/EstiloCGanancia.css">
+    <title>Configurar Ganancias</title>
+</head>
+<body class="Incio" data-role="1">
+
+    <!--header-->
+    <div class="header">
+        <span class="material-symbols-outlined" onclick="cerrarSesion()">logout</span>
+    </div>
+
+    <!--navbar-->
+    <div class="Navbar">
+        <div class="titulo">
+            <img src="IMG/Logo.png" alt="Logo">
+            <p>Sistema GADI</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Inicio.html">Inicio</a></li>
+                <li><a href="Registrar_Venta.html">Registrar Venta</a></li>
+                <li><a href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
+                <li><a href="Registrar_Egresos.html">Registrar Egresos</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a class="active" href="ConfigGanancias.html">Configurar Ganancias</a></li>
+                <li><a href="Generar_Reporte.html">Generar Reporte</a></li>
+                <li><a href="Transacciones.html">Transacciones</a></li>
+                <li><a href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
+                <li><a href="Roles.html">Roles</a></li>
+                <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!--main-->
+    <div class="main">
+
+        <!--Botones y filtro-->
+        <div class="acciones-arriba fila-arriba">
+            <div class="acciones-izquierda">
+                <input type="number" id="inputFiltrarID" placeholder="Filtrar por ID">
+                <button type="button" id="btnFiltrar">Filtrar</button>
+            </div>
+            <div class="acciones-derecha">
+                <button type="button" id="btnNuevo">Nueva Configuración</button>
+                <button type="button" id="btnEliminar">Eliminar</button>
+            </div>
         </div>
 
-        <div class="Navbar">      
-            <div class="titulo">
-                <img src="/IMG/Logo.png" alt="Logo">
-                <p>Sistema GADI</p>
+        <!--Formulario de configuración-->
+        <div id="formConfig" class="formulario-registro">
+            <div class="Info">
+                <h1>Configurar Ganancias</h1>
+                <p>Establezca los porcentajes de distribución de ganancias</p>
             </div>
-            <hr class="Barra">
-            <nav>
-                <ul>
-                    <li><a id="link-inicio" href="Inicio.html">Incio</a></li>
-                    <li><a id="link-ventas" href="Registrar_Venta.html">Registrar Venta</a></li>
-                    <li><a id="link-reparaciones" href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
-                    <li><a  id="link-egresos" href="Registrar_Egresos.html">Registrar Egresos</a></li>
-                    <li><a id="link-productos" href="Productos.html">Productos</a></li>
-                    <li><a id="link-ganancias"  href="ConfigGanancias.html">Configurar Ganancias</a></li>
-                    <li><a id="link-reportes" href="Generar_Reporte.html">Generar Reporte</a></li>
-                    <li><a id="link-transacciones" href="Transacciones.html">Transacciones</a></li>
-                    <li><a id="link-usuarios" href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
-                    <li><a id="Link-roles" href="Roles.html">Roles</a></li>
-                    <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
-                </ul>
-            </nav>
-        </div>  
 
-        <div class="main"></div>
+            <!--Columnas del formulario-->
+            <div class="columna-izq">
+                <div class="form">
+                    <label>ID Ganancia</label>
+                    <input type="number" id="idganancia" class="registro" required>
+                </div>
+                <div class="form">
+                    <label>Porcentaje Taller (%)</label>
+                    <input type="number" id="porcentajeTaller" class="registro" step="0.01" required>
+                </div>
+                <div class="form">
+                    <label>Porcentaje Empleado (%)</label>
+                    <input type="number" id="porcentajeEmpleado" class="registro" step="0.01" required>
+                </div>
+            </div>
 
-            <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
-        <script src="/JS/Sesion.js"></script>
-    </body>
+            <div class="columna-der">
+                <div class="form">
+                    <label>Fecha Configuración</label>
+                    <input type="date" id="fechaConfig" class="registro" required>
+                </div>
+                <div class="form">
+                    <label>Estado Distribución</label>
+                    <select id="estadoDistrib" class="Selector">
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <input type="hidden" id="iduser">
+            </div>
+
+            <!--Botones del formulario-->
+            <div class="botones">
+                <button type="button" class="btnRegistrar" id="btnGuardarGanancia">Guardar Configuración</button>
+                <button type="button" class="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+
+        <!--Tabla de Configuraciones-->
+        <div class="tabla-ganancia">
+            <table id="tblConfigGanancias">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Porcentaje Taller</th>
+                        <th>Porcentaje Empleado</th>
+                        <th>Fecha Config</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="JS/Sesion.js"></script>
+    <script src="JS/ConfigGanancias.js"></script>
+
+</body>
 </html>
