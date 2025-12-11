@@ -119,3 +119,174 @@ body.Incio {
     font-family: "Inter", sans-serif;
     color: #919bb5;    
 }
+
+/* BOTÓN SUPERIOR */
+.acciones-superiores {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.acciones-superiores button {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;    
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #5384ff;
+    color: #ffffff;
+    margin-right: 6px;    
+    transition: all 0.2s ease; 
+}
+
+.acciones-superiores button:hover {
+    background-color: #2100b6;
+}
+
+/* TABLA */
+.tabla-reportes {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Inter", sans-serif;
+    font-size: 1re;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-reportes th {
+    padding: 5px;
+    background-color: #2100b6;
+    color: white;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: left;
+}
+
+.tabla-reportes td {
+    padding: 5px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.tabla-reportes tbody tr:hover {
+    background-color: #d4d6da96;
+}
+
+.fila-reporte {
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.btnEliminar {
+    display: none;
+    background-color: #ff4e4e;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.fila-reporte:hover .btnEliminar {
+    display: inline-block;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contenido {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    width: 420px;
+    max-width: 95%;
+    font-family: "Inter", sans-serif;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-contenido h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #140169;
+    font-size: 1.5rem;
+}
+
+.modal-contenido input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.modal-contenido input:focus {
+    border-color: #5384ff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(83, 132, 255, 0.2);
+}
+
+.modal-formulario input::placeholder {
+    color: #919bb5;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.modal-buttons button {
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#btnCrearReporte {
+    background-color: #5384ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+#btnCrearReporte:hover {
+    background-color: #2100b6;
+}
+
+#btnCerrarModal {
+    border-radius: 8px;
+    border: none;
+    background-color: #e3e6ee;
+    color: #3000FF;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+#btnCerrarModal:hover {
+    background-color: #9c97b4;
+}
+

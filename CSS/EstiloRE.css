@@ -120,82 +120,61 @@ body.Incio {
     color: #919bb5;    
 }
 
-/* ----------- REGISTRO DE VENTA ----------- */
-.RegistroV{
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0px 5px 5px #2f00ff31;
-    margin-bottom: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: flex-start;  
-    min-height: 500px;  
-}
+/* ===== ESTILOS DE TABLA DE EGRESOS ===== */
 
-.form label{
+.tabla-egresos table {
+    width: 100%;
+    border-collapse: collapse;
     font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 30px;
-    color: #2100b6;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    gap: 4px;
-}
-
-.RegistroV .registro{
-    font-family: "Inter", sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid #007bff;
-    background-color: aliceblue;
-    cursor: pointer;
-    margin-top: 10px; 
-}
-
-.RegistroV .registro:hover{
-    background-color: #d3e0ff;
-}
-
-.RegistroV .itbms{
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 30px;
-    background-color: aliceblue;
-    color: #140169;
-    padding: 10px;
-    box-shadow: 0px 5px 5px #008cff3b;
-    width: 300px;
-}
-
-.RegistroV .Selector{
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 2px solid #007bff;
-    background-color: #f4f7ff;
-    cursor: pointer;       
-    transition: 0.2s;
     margin-top: 10px;
-    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
-.RegistroV .Selector{
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 2px solid #007bff;
-    background-color: #f4f7ff;
-    cursor: pointer;       
-    transition: 0.2s;
-    margin-top: 10px;    
-    margin-bottom: 10px;
+
+.tabla-egresos th{
+    padding: 8px;
+    background-color: #2100b6;
+    color: white;
+    border-bottom: 1px solid #e4e4e4;
+    text-align: left;
 }
+
+.tabla-egresos td {
+    padding: 12px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+
+
+.tabla-egresos tbody tr:hover {
+    background-color: #d4d6da96;
+}
+
+/* Botón eliminar (oculto por defecto) */
+.btn-eliminar {
+    display: none;
+    background-color: #ff4e4e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+
+.btn-eliminar:hover {
+    background-color: #d10000;
+}
+
+/* Mostrar botón eliminar SOLO cuando se pasa el mouse */
+.tabla-egresos tbody tr:hover .btn-eliminar {
+    display: inline-block;
+}
+
+
+/* ----------- Bontones ----------- */
 
 .btn-cantidad:hover {
     background-color: #8dc2ff;
@@ -209,55 +188,10 @@ body.Incio {
     text-align: center;
 }
 
-.form label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    font-weight: 600; 
-    gap: 4px; 
-}
-
-.grupo-opciones-caja {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columnas */
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.opcion-caja {   
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    border: 2px solid #5384ff;
-    border-radius: 10px;
-    padding: 14px;
-    text-align: center;
-    cursor: pointer;
-    background-color: #fff;
-    transition: all 0.2s ease;
-    font-weight: 600;
-    justify-content: center;
-    align-items: center;
-}
-
-.opcion-caja input {
-    display: none;
-}
-
-.opcion-caja input:checked + .texto {
-    color: #ffffff;
-}
-
-.opcion-caja input:checked ~ .texto,
-.opcion-caja:has(input:checked) {
-    background-color: #007bff;
-    border-color: #005fcc;
-    color: #ffffff;
-}
-
 .botones{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
 }
 
 .botones .btnRegistrar{
@@ -275,21 +209,6 @@ body.Incio {
     transition: all 0.2s ease;    
 }
 
-.botones .btnCancelar{
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    padding: 14px;
-    text-align: center;
-    cursor: pointer;
-    background-color: #e3e6ee;
-    color: #140169;
-    margin-left: 6px;
-    transition: all 0.2s ease;    
-}
-
 .botones .btnRegistrar:hover{
     background-color: #2100b6;
 }
@@ -302,11 +221,122 @@ body.Incio {
     background-color: #f0f6ff;
 }
 
-.form .fecha{
+/* ===== ESTILOS DEL MODAL ===== */
+
+/* Overlay del modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+/* Contenido principal del modal */
+.modal-contenido {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    width: 420px;
+    max-width: 95%;
     font-family: "Inter", sans-serif;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Título del modal */
+.modal-titulo {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #140169;
+    font-size: 1.5rem;
+}
+
+/* Formulario dentro del modal */
+.modal-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-formulario label {
     font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 40px;
+    color: #060023;
+    margin-top: 4px;
+    font-size: 1rem;
+}
+
+.modal-formulario input,
+.modal-formulario select {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.modal-formulario input:focus,
+.modal-formulario select:focus {
+    outline: none;
+    border-color: #5384ff;
+    box-shadow: 0 0 0 2px rgba(83, 132, 255, 0.2);
+}
+
+.modal-formulario input::placeholder {
+    color: #919bb5;
+}
+
+/* Contenedor de botones del modal */
+.modal-botones {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 16px;
+}
+
+.modal-botones .btnRegistrar,
+.modal-botones .btnCancelar {
+    font-size: 16px;
+    padding: 10px 16px;
+}
+
+#btnCrear{
+    background-color: #5384ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+#btnCrear:hover {
+    background-color: #2100b6;
+}
+
+#btnCerrarModal{
+    border-radius: 8px;
+    border: none;
+    background-color: #e3e6ee;
+    color: #3000FF;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+#btnCerrarModal:hover {
+    background-color: #9c97b4;
+}
+
+/* Mensaje de error/confirmación del modal */
+.modal-mensaje {
+    color: #ff4e4e;
+    margin: 8px 0 0 0;
+    font-size: 0.85rem;
+    min-height: 20px;
 }
 
 /*RESPONSIVE PARA TABLETS*/

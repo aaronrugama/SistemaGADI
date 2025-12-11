@@ -1,4 +1,4 @@
-/* ----------- BODY ----------- */
+/*body*/
 body.Incio {
     background-color: aliceblue;
     margin: 0;
@@ -6,7 +6,7 @@ body.Incio {
     flex-direction: row;
 }
 
-/* ----------- NAVBAR ----------- */
+/*navbar*/
 .Navbar {
     width: 220px;
     background-color: #ffffff;
@@ -63,14 +63,18 @@ body.Incio {
     transition: 0.5s ease;
 }
 
-.Navbar nav ul li a:hover,
+.Navbar nav ul li a:hover{
+    background-color: #2100b6;
+    color: #f0f8ff;
+    padding-left: 20px;
+}
 .Navbar nav ul li a.active {
     background-color: #2100b6;
     color: #f0f8ff;
     padding-left: 20px;
 }
 
-/* ----------- HEADER ----------- */
+/*header*/
 .header {
     position: fixed;
     top: 0;
@@ -98,7 +102,7 @@ body.Incio {
     color: #3000FF;
 }
 
-/* ----------- MAIN ----------- */
+/*main*/
 .main {
     margin-left: 270px; 
     margin-top: 69px;   
@@ -108,7 +112,7 @@ body.Incio {
     box-sizing: border-box;
 }
 
-/* ----------- INFO ----------- */
+/*info sección*/
 .Info h1{
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
@@ -120,7 +124,32 @@ body.Incio {
     color: #919bb5;    
 }
 
-/* ----------- REGISTRO DE VENTA ----------- */
+.formulario-registro {
+    display: none;
+    margin-top: 20px;
+}
+
+.fila-arriba {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.acciones-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.acciones-derecha {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/*registro de reparaciones*/
 .RegistroV{
     background-color: #ffffff;
     padding: 30px;
@@ -141,7 +170,7 @@ body.Incio {
     color: #2100b6;
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 2px;   
     gap: 4px;
 }
 
@@ -154,24 +183,14 @@ body.Incio {
     border: 2px solid #007bff;
     background-color: aliceblue;
     cursor: pointer;
-    margin-top: 10px; 
+    margin-top: 6px;        
+    margin-bottom: 22px;   
 }
 
 .RegistroV .registro:hover{
     background-color: #d3e0ff;
 }
 
-.RegistroV .itbms{
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 30px;
-    background-color: aliceblue;
-    color: #140169;
-    padding: 10px;
-    box-shadow: 0px 5px 5px #008cff3b;
-    width: 300px;
-}
-
 .RegistroV .Selector{
     width: 300px;
     padding: 10px;
@@ -181,83 +200,28 @@ body.Incio {
     background-color: #f4f7ff;
     cursor: pointer;       
     transition: 0.2s;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.RegistroV .Selector{
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 2px solid #007bff;
-    background-color: #f4f7ff;
-    cursor: pointer;       
-    transition: 0.2s;
-    margin-top: 10px;    
-    margin-bottom: 10px;
+    margin-top: 6px;        
+    margin-bottom: 22px;    
 }
 
-.btn-cantidad:hover {
-    background-color: #8dc2ff;
-}
-
-#cantidad {
-   font-family: "Inter", sans-serif;
-    font-weight: 600;
-    font-size: 22px;
-    min-width: 20px;
-    text-align: center;
-}
-
-.form label {
+.titulo-fecha {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    font-weight: 600; 
-    gap: 4px; 
-}
-
-.grupo-opciones-caja {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columnas */
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.opcion-caja {   
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    border: 2px solid #5384ff;
-    border-radius: 10px;
-    padding: 14px;
-    text-align: center;
-    cursor: pointer;
-    background-color: #fff;
-    transition: all 0.2s ease;
-    font-weight: 600;
-    justify-content: center;
+    justify-content: flex-start; 
     align-items: center;
+    gap: 12px; 
 }
 
-.opcion-caja input {
-    display: none;
+.chk-fecha {
+    transform: scale(1.3);
+    cursor: pointer;
 }
 
-.opcion-caja input:checked + .texto {
-    color: #ffffff;
-}
-
-.opcion-caja input:checked ~ .texto,
-.opcion-caja:has(input:checked) {
-    background-color: #007bff;
-    border-color: #005fcc;
-    color: #ffffff;
-}
-
+/*botones generales*/
 .botones{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .botones .btnRegistrar{
@@ -297,21 +261,131 @@ body.Incio {
 .botones .btnCancelar:hover{
     background-color: #9c97b4;
 }
-.opcion-caja:hover {
-    border-color: #007bff;
-    background-color: #f0f6ff;
+
+/*acciones*/
+.acciones-arriba {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; 
 }
 
-.form .fecha{
+.acciones-arriba button {
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 40px;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/*RESPONSIVE PARA TABLETS*/
-@media (max-width: 900px) {
+.acciones-arriba #btnNuevo {
+    background-color: #5384ff;
+    color: #fff;
+}
 
+.acciones-arriba #btnNuevo:hover {
+    background-color: #2100b6;
+}
+
+.acciones-arriba #btnEliminar {
+    background-color: #e3e6ee;
+    color: #140169;
+}
+
+.acciones-arriba #btnEliminar:hover {
+    background-color: #9c97b4;
+}
+
+/*filtrar*/
+.acciones-arriba #inputFiltrarID {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    outline: none;
+    transition: 0.2s ease;
+    width: 180px;
+}
+
+.acciones-arriba #inputFiltrarID:focus {
+    border-color: #2100b6;
+    box-shadow: 0 0 5px #2100b6;
+}
+
+.acciones-arriba #btnFiltrar {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #5384ff;
+    color: #fff;
+}
+
+.acciones-arriba #btnFiltrar:hover {
+    background-color: #2100b6;
+}
+
+/*tabla reparaciones*/
+.tabla-reparaciones table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px #2f00ff31;
+}
+
+.tabla-reparaciones thead {
+    background-color: #2100b6;
+    color: #f0f8ff;
+}
+
+.tabla-reparaciones th{
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.tabla-reparaciones td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-reparaciones tbody tr:hover {
+    background-color: #d3e0ff;
+}
+
+.tabla-reparaciones button.btnEditar {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #5384ff;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.tabla-reparaciones button.btnEditar:hover {
+    background-color: #2100b6;
+}
+
+/*responsive*/
+@media (max-width: 900px) {
     .RegistroV {
         grid-template-columns: 1fr; 
         padding: 20px;
@@ -338,11 +412,24 @@ body.Incio {
     .header {
         width: calc(100% - 180px);
     }
+
+    .acciones-arriba {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tabla-reparaciones table{
+        font-size: 14px;
+    }
+    .tabla-reparaciones th{
+        font-size: 14px;
+    }
+    .tabla-reparaciones td{
+        font-size: 14px;
+    }
 }
 
-/*RESPONSIVE PARA CELULARES*/
 @media (max-width: 600px) {
-
     body.Incio {
         flex-direction: column;
         align-items: stretch;
@@ -389,8 +476,31 @@ body.Incio {
         gap: 10px;
     }
 
-    #btnRegistrar, 
-    #btnCancelar {
+    #btnRegistrar{
         width: 100%;
+    } 
+    #btnCancelar{
+        width: 100%;
+    }
+
+    .acciones-arriba {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tabla-reparaciones table {
+        font-size: 12px;
+    }
+
+    .tabla-reparaciones th{
+        padding: 8px 5px;
+    }
+    .tabla-reparaciones td{
+        padding: 8px 5px;
+    }
+
+    .tabla-reparaciones button.btnEditar {
+        padding: 4px 8px;
+        font-size: 12px;
     }
 }

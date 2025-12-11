@@ -26,71 +26,86 @@
                     <li><a id="link-inicio" href="Inicio.html">Incio</a></li>
                     <li><a id="link-ventas" href="Registrar_Venta.html">Registrar Venta</a></li>
                     <li><a id="link-reparaciones" href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
-                    <li><a  id="link-egresos" href="Registrar_Egresos.html">Registrar Egresos</a></li>
+                    <li><a  id="link-egresos" class="active" href="Registrar_Egresos.html">Registrar Egresos</a></li>
                     <li><a id="link-productos" href="Productos.html">Productos</a></li>
                     <li><a id="link-ganancias"  href="ConfigGanancias.html">Configurar Ganancias</a></li>
                     <li><a id="link-reportes" href="Generar_Reporte.html">Generar Reporte</a></li>
                     <li><a id="link-transacciones" href="Transacciones.html">Transacciones</a></li>
                     <li><a id="link-usuarios" href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
                     <li><a id="Link-roles" href="Roles.html">Roles</a></li>
-                    <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
+                    <li><a onclick="cerrarSesion()" class="cerrar-sesion">Cerrar Sesión</a></li>
                 </ul>
             </nav>
         </div>  
 
         <div class="main">
 
-                <div class="Info">
-                    <h1>Registrar venta por Reparacion</h1>
-                    <p>Aqui usted puede ingresar cualquier venta de reparaciones</p>
-                </div>
-
-            <div class="RegistroV">
-
-                <!-- COLUMNA IZQUIERDA -->
-                <div class="columna-izq">
-
-                    <div class="form">
-                        <label for="MontoP">Registrar Monto</label>
-                        <input type="text" name="MontoP" id="MontoP" class="registro" placeholder="0.00$">
-                    </div>
-
-                    <p class="itbms">itbm: 0.70$</p>
-
-                    <div class="form">
-                        <label for="Selector">Productos</label>
-                        <select class="Selector" id="TipoGasto" required>
-                            <option value="">Seleccione tipo de gasto</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form">
-                        <label for="Selector">Productos</label>
-                        <select class="Selector" id="porveedor" required>
-                        <option value="">porveedor</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- COLUMNA DERECHA -->
-                <div class="columna-der">
-
-                    <div class="form">
-                        <label for="DiaActual">Fecha de hoy</label>
-                        <p class="fecha">:<span id="fecha"></span></p>
-                    </div>
-
-                </div>
-
-
+            <div class="Info">
+                <h1>Registrar Egreso</h1>
+                <p>Registros de los gastos realizados</p> 
             </div>
-            <div class="botones">
-                <button type="button" class="btnRegistrar" id="RegistraEgreso">Registrar Egreso</button>
-                <button type="button" class="btnCancelar" id="CancelarEgreso">Canelar</button>
+
+            <div class="botones botones-egresos">
+                <button type="button" class="btnRegistrar" id="btnOpenCrear">Nuevo Egreso</button>
             </div>
+
+            <!-- Tabla de Egresos -->
+            <div class="tabla-egresos">
+                <table id="tblEgresos" class="tabla-egresos-estilo">
+                    <thead>
+                        <tr class="tabla-cabecera">
+                            <th>ID</th>
+                            <th>Descripción</th>
+                            <th>Proveedor/Tipo</th>
+                            <th>Monto</th>
+                            <th>Fecha</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyEgresos">
+                        <!-- filas se insertan por JS -->
+                    </tbody>
+                </table>
+                <p id="msgEgresos" class="mensaje-egresos"></p>
+            </div>
+
+            <!-- Modal simple (oculto) para crear egreso -->
+            <div id="modalCrear" class="modal-overlay">
+                <div class="modal-contenido">
+                    <h3 class="modal-titulo">Crear Egreso</h3>
+
+                    <div class="modal-formulario">
+                        <label>Descripción</label>
+                        <input id="inputDescripcion" type="text" placeholder="Descripción del egreso">
+
+                        <label>Proveedor</label>
+                        <select id="inputTipo">
+                            <option value="">Seleccione el Proveedor</option>
+                            <option value="Proveedor Nacional">Proveedor Nacional</option>
+                            <option value="Proveedor Extranjero">Proveedor Extranjero</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+
+                        <label>Monto</label>
+                        <input id="inputMonto" type="number" step="0.01" min="0" placeholder="0.00">
+
+                        <label>Fecha</label>
+                        <input id="inputFecha" type="date" required>
+
+                        <div class="modal-botones">
+                            <button id="btnCrear" class="btnRegistrar">Crear</button>
+                            <button id="btnCerrarModal" class="btnCancelar">Cancelar</button>
+                        </div>
+
+                        <p id="msgModal" class="modal-mensaje"></p>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-            <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
+        <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
         <script src="/JS/Sesion.js"></script>
+        <script src="/JS/RegistrarEgreso.js"></script>
     </body>
 </html>
