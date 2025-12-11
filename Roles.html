@@ -1,47 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/CSS/EstiloGR.css">
-        <title>Roles</title>
-    </head>
-    <body class="Incio" data-role="1">
-        <div class="header" >
-            <span class="material-symbols-outlined" onclick="cerrarSesion()">logout</span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="/CSS/EstiloRol.css">
+    <title>Roles</title>
+</head>
+<body class="Incio" data-role="1">
+
+    <!-- HEADER -->
+    <div class="header">
+        <span class="material-symbols-outlined" onclick="cerrarSesion()">logout</span>
+    </div>
+
+    <!-- NAVBAR -->
+    <div class="Navbar">      
+        <div class="titulo">
+            <img src="/IMG/Logo.png" alt="Logo">
+            <p>Sistema GADI</p>
+        </div>
+        <hr class="Barra">
+<nav>
+    <ul>
+        <li><a id="link-inicio" href="Inicio.html">Inicio</a></li>
+        <li><a id="link-ventas" href="Registrar_Venta.html">Registrar Venta</a></li>
+        <li><a id="link-reparaciones" href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
+        <li><a id="link-egresos" href="Registrar_Egresos.html">Registrar Egresos</a></li>
+        <li><a id="link-productos" href="Productos.html">Productos</a></li>
+        <li><a id="link-ganancias" href="ConfigGanancias.html">Configurar Ganancias</a></li>
+        <li><a id="link-reportes" href="Generar_Reporte.html">Generar Reporte</a></li>
+        <li><a id="link-transacciones" href="Transacciones.html">Transacciones</a></li>
+        <li><a id="link-usuarios" href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
+        <li><a id="Link-roles" class="active" href="Roles.html">Roles</a></li>
+        <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
+    </ul>
+</nav>
+
+    </div>  
+
+    <!-- MAIN -->
+    <div class="main">
+        <div class="Info">
+            <h1>Gestión de Roles</h1>
+            <p>Administrar todos los roles del sistema, incluyendo creación, edición y eliminación</p>
+        </div>
+        
+        <div class="grupo-opciones-caja">
+            <div class="form">
+                <label for="buscarRol">Buscar Rol</label>
+                <input type="text" id="buscarRol" class="registro" placeholder="Buscar por nombre">
+            </div>
+            <button type="button" id="btnAgregarRol" class="btnRegistrar-rol">Agregar Rol</button>
         </div>
 
-        <div class="Navbar">      
-            <div class="titulo">
-                <img src="/IMG/Logo.png" alt="Logo">
-                <p>Sistema GADI</p>
+        <div class="RegitroV">
+          <div class="roles-header">
+    <div>ID</div>
+    <div>Nombre del Rol</div>
+    <div>Acciones</div>
+</div>
+            <div id="roles-lista"></div>
+        </div>
+
+        <!-- OVERLAY -->
+        <div id="overlay" class="overlay oculto"></div>
+
+        <!-- MODAL -->
+        <div id="modalRol" class="modal oculto">
+            <h2 id="modalTitulo">Agregar Rol</h2>
+            <div class="modal-form">
+                <div class="campo">
+                    <label>Nombre del Rol</label>
+                    <input type="text" id="nombreRolInput" placeholder="Ej: Administrador">
+                </div>
+                <div id="mensajeError" class="mensaje-error oculto"></div>
+                <button id="btnGuardarRol" class="btnGuardar-rol">Guardar</button>
+                <button id="btnCerrarModal" class="btnGuardar-rol" style="background:#ccc;color:#000;margin-top:5px;">Cerrar</button>
             </div>
-            <hr class="Barra">
-            <nav>
-                <ul>
-                    <li><a id="link-inicio" href="Inicio.html">Incio</a></li>
-                    <li><a id="link-ventas" href="Registrar_Venta.html">Registrar Venta</a></li>
-                    <li><a id="link-reparaciones" href="Registrar_Reparaciones.html">Registrar Reparaciones</a></li>
-                    <li><a  id="link-egresos" href="Registrar_Egresos.html">Registrar Egresos</a></li>
-                    <li><a id="link-productos" href="Productos.html">Productos</a></li>
-                    <li><a id="link-ganancias"  href="ConfigGanancias.html">Configurar Ganancias</a></li>
-                    <li><a id="link-reportes" href="Generar_Reporte.html">Generar Reporte</a></li>
-                    <li><a id="link-transacciones" href="Transacciones.html">Transacciones</a></li>
-                    <li><a id="link-usuarios" href="Gestionar_Usuario.html">Gestionar Usuario</a></li>
-                    <li><a id="Link-roles" href="Roles.html">Roles</a></li>
-                    <li><a onclick="cerrarSesion()" style="cursor:pointer;">Cerrar Sesión</a></li>
-                </ul>
-            </nav>
-        </div>  
+        </div>
+    </div>
 
-        <div class="main"></div>
-
-            <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
-            <script src="/JS/Sesion.js"></script>
-    </body>
+    <script src="/JS/Sesion.js"></script>
+    <script src="/JS/roles.js"></script>
+</body>
 </html>

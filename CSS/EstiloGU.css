@@ -440,3 +440,57 @@ body.Incio {
         width: 100%;
     }
 }
+/*Para errores*/
+.mensaje-error {
+    background-color: #ffdddd;   
+    color: #a33;               
+    border: 1px solid #a33;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
+
+.oculto {
+    display: none;
+}
+
+/* BOTÓN ACTUALIZAR USUARIO */
+#btnActualizarUsuario {
+    width: 100%;
+    padding: 12px;
+    background-color: #5384ff; 
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+#btnActualizarUsuario:hover {
+    background-color: #2100b6; 
+}
+
+/* BOTÓN CERRAR */
+#btnCerrarEditar {
+    width: 100%;
+    padding: 12px;
+    background-color: #ccc; 
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+#btnCerrarEditar:hover {
+    background-color: #999; 
+}
