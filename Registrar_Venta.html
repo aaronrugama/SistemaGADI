@@ -38,92 +38,100 @@
             </nav>
         </div>  
 
-    <div class="main">
-
-        <div class="Info">
+            <div class="main">
+            <div class="Info">
             <h1>Registrar Venta de Producto</h1>
             <p>Aqui usted puede ingresar cualquier venta de producto</p>
-        </div>
-
-        <div class="RegistroV">
-
-            <!-- COLUMNA IZQUIERDA -->
-            <div class="columna-izq">
-
-                <div class="form">
-                    <label for="MontoP">Registrar Monto</label>
-                    <input type="text" name="MontoP" id="MontoP" class="registro" placeholder="0.00$">
-                </div>
-
-                <p class="itbms">itbm: 0.70$</p>
-
-                <div class="form">
-                    <label for="Selector">Productos</label>
-                    <select class="Selector" id="Productos" required>
-                        <option value="">Seleccione los productos</option>
-                    </select>
-                </div>
-
-                <div class="contador">
-                    <button class="btn-cantidad" id="restar">
-                        <span class="material-symbols-outlined">remove</span>
-                    </button>
-
-                    <span id="cantidad">1</span>
-
-                    <button class="btn-cantidad" id="sumar">
-                        <span class="material-symbols-outlined">add</span>
-                    </button>
-                </div>
-
             </div>
 
-            <!-- COLUMNA DERECHA -->
-            <div class="columna-der">
-
-                <div class="form">
-                    <label for="DiaActual">Fecha de hoy</label>
-                    <p class="fecha">:<span id="fecha"></span></p>
-                </div>
-
-                <div class="grupo-opciones-caja">
-
-                    <label class="opcion-caja">
-                        <input type="radio" name="tipoPago" value="1">
-                        <span class="texto">Tarjeta de Débito</span>
-                    </label>
-
-                    <label class="opcion-caja">
-                        <input type="radio" name="tipoPago" value="2">
-                        <span class="texto">Tarjeta de Crédito</span>
-                    </label>
-
-                    <label class="opcion-caja">
-                        <input type="radio" name="tipoPago" value="3">
-                        <span class="texto">Yappy</span>
-                    </label>
-
-                    <label class="opcion-caja">
-                        <input type="radio" name="tipoPago" value="4">
-                        <span class="texto">Efectivo</span>
-                    </label>
-
-                </div>
-
+         <div class="RegistroV">
+        <!-- Columna Izquierda -->
+        <div class="columna-izq">
+            <div class="form">
+                <label for="Descripcion">Descripción de venta</label>
+                <input type="text" name="Descripcion" id="Descripcion" 
+                       class="registro" 
+                       placeholder="Ingresar descripción"
+                       required>
             </div>
 
+            <!-- Productos -->
+            <div class="form">
+                <label for="Selector">Productos:</label>
+                <select class="Selector" id="Productos" required>
+                    <option value="">Seleccione un producto</option>
+                </select>
+            </div>
+
+            <!-- Cantidad -->
+            <div class="contador">
+                <button class="btn-cantidad" id="restar">
+                    <span class="material-symbols-outlined">remove</span>
+                </button>
+                <span id="cantidad">1</span>
+                <button class="btn-cantidad" id="sumar">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+            </div>
         </div>
 
+        <!-- Columna Derecha -->
+        <div class="columna-der">
+            <!-- Fecha -->
+            <div class="form">
+                <label for="DiaActual">Fecha:</label>
+                <p class="fecha"><span id="fecha"></span></p>
+            </div>
 
-        <div class="botones">
-            <button type="button" class="btnRegistrar" id="RegistraVProducto">Registrar Venta</button>
-            <button type="button" class="btnCancelar" id="CancelarVProducto">Cancelar</button>
+            <!-- Monto calculado -->
+            <div class="form">
+                <label>Monto:</label>
+                <input type="text" id="MontoP" class="registro" value="0.00" readonly>
+            </div>
+
+            <!-- ITBMS -->
+            <p class="itbms">ITBMS: $0.00<br>Total: $0.00</p>
         </div>
-
     </div>
+
+    <!-- BOTONES -->
+    <div class="botones">
+        <button type="button" class="btnRegistrar" id="RegistraVProducto">Registrar Venta</button>
+        <button type="button" class="btnCancelar" id="CancelarVProducto">Cancelar</button>
+    </div>
+
+    <div class="historial-section">
+        <h2>Historial de Ventas</h2>
+        
+        <div class="table-container">
+<table id="tablaVentas">
+    <thead>
+        <tr>
+            <th>ID Venta</th>
+            <th>Fecha</th>
+            <th>Descripción</th>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Monto</th>
+            <th>Usuario</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Se llena con JavaScript -->
+    </tbody>
+</table>
+        </div>
+        
+        <div class="table-info">
+            <p id="contadorVentas">Cargando ventas...</p>
+        </div>
+    </div>
+</div>
 
     <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
     <script src="/JS/Sesion.js"></script>
+    <script src="/JS/RegistrarVenta.js"></script>
 
 </body>
 </html>
