@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/EstiloGR.css">
+    <link rel="stylesheet" href="CSS/EstiloProd.css">
     <title>Productos</title>
 </head>
 <body class="Incio" data-role="">
@@ -39,9 +39,98 @@
         </nav>
     </div>  
 
-    <div class="main"></div>
+    <div class="main">
+        <!-- Encabezado -->
+        <div class="Info">
+            <h1>Gestión de Productos</h1>
+            <p>Administre el inventario de productos electrónicos</p>
+        </div>
 
-        <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
-        <script src="/JS/Sesion.js"></script>
+        <!-- Formulario para Agregar/Editar -->
+        <div class="form-section">
+            <h2 id="formTitulo">Agregar Nuevo Producto</h2>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombreProd">Nombre del Producto:</label>
+                    <input type="text" id="nombreProd" class="form-input" 
+                           placeholder="Ingresar producto" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="precioProd">Precio:</label>
+                    <input type="number" id="precioProd" class="form-input" 
+                           step="0.01" min="0.01" placeholder="0.00" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="descripcionProd">Descripción</label>
+                <textarea id="descripcionProd" class="form-textarea" 
+                          placeholder="Ingresar descripción..." rows="3"></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="tipoProd">Tipo de Producto</label>
+                    <select id="tipoProd" class="form-select">
+                        <option value="Electrónico">Electrónico</option>
+                        <option value="Repuesto">Repuesto</option>
+                        <option value="Accesorio">Accesorio</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="estadoProd">Estado</label>
+                    <select id="estadoProd" class="form-select">
+                        <option value="Disponible">Disponible</option>
+                        <option value="Agotado">Agotado</option>
+                        <option value="Descontinuado">Descontinuado</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-buttons">
+                <button type="button" id="btnGuardar" class="btn-primary">Guardar Producto</button>
+                <button type="button" id="btnCancelar" class="btn-secondary" style="display:none;">Cancelar Edición</button>
+            </div>
+        </div>
+
+        <!-- Tabla de Productos -->
+        <div class="table-section">
+            <h2>Inventario de Productos</h2>
+            
+            <div class="table-container">
+                <table id="tablaProductos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Tipo</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="loadingRow">
+                            <td colspan="7" style="text-align:center;">
+                                Cargando productos...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-info">
+                <p id="contadorProductos">Cargando...</p>
+            </div>
+        </div>
+    </div>
+
+    <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
+    <script src="/JS/Sesion.js"></script>
+    <script src="/JS/Productos.js"></script>
 </body>
 </html>
