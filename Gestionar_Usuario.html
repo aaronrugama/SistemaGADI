@@ -115,46 +115,139 @@
             <!-- OVERLAY OSCURO -->
             <div id="overlay" class="overlay oculto"></div>
 
-            <!-- MODAL DE AGREGAR USUARIO -->
-            <div id="modalUsuario" class="modal oculto">
 
-                <h2>Agregar usuario</h2>
 
-                <div class="modal-form">
-                    <div class="campo">
-                        <label>Nombre</label>
-                        <input type="text" id="nombreInput" placeholder="Texto">
-                    </div>
+<!-- MODAL PARA VER USUARIO -->
+<div id="modalVerUsuario" class="modal oculto">
+    <h2>Detalles del Usuario</h2>
 
-                    <div class="campo">
-                        <label>Apellido</label>
-                        <input type="text" id="apellidoInput" placeholder="Texto">
-                    </div>
-
-                    <div class="campo">
-                        <label>Cédula</label>
-                        <input type="text" id="cedulaInput" placeholder="Texto">
-                    </div>
-
-                    <div class="campo">
-                        <label>Correo</label>
-                        <input type="email" id="correoInput" placeholder="Texto">
-                    </div>
-
-                    <div class="campo">
-                        <label>Rol</label>
-                        <input type="text" id="rolInput" placeholder="Texto">
-                    </div>
-                </div>
-
-                <button id="btnGuardarUsuario" class="btnGuardar">
-                    <span class="material-symbols-outlined">person_add</span>
-                    Agregar nuevo usuario
-                </button>
-            </div>
+    <div class="modal-form">
+        <div class="campo">
+            <label>Nombre completo:</label>
+            <p id="verNombre"></p>
         </div>
+
+        <div class="campo">
+            <label>Cédula:</label>
+            <p id="verCedula"></p>
+        </div>
+
+        <div class="campo">
+            <label>Dirección:</label>
+            <p id="verDireccion"></p>
+        </div>
+
+        <div class="campo">
+            <label>Correo:</label>
+            <p id="verCorreo"></p>
+        </div>
+
+        <div class="campo">
+            <label>Contraseña:</label>
+            <p id="verContrasena"></p>
+            <button id="btnMostrarContrasena" class="btnMostrar">Mostrar</button>
+        </div>
+
+        <div class="campo">
+            <label>Intentos:</label>
+            <p id="verIntentos"></p>
+        </div>
+
+        <div class="campo">
+            <label>Estado:</label>
+            <p id="verEstado"></p>
+        </div>
+
+        <div class="campo">
+            <label>ID Rol:</label>
+            <p id="verIdRol"></p>
+        </div>
+    </div>
+
+    <button id="btnCerrarVerUsuario">Cerrar</button>
+ </div>
+
+ <!-- MODAL PARA AGREGAR USUARIO -->
+<div id="modalUsuario" class="modal oculto">
+    <div class="modal-form">
+        <div class="campo">
+            <label>Nombre</label>
+            <input type="text" id="nombreInput">
+        </div>
+        <div class="campo">
+            <label>Apellido</label>
+            <input type="text" id="apellidoInput">
+        </div>
+        <div class="campo">
+            <label>Cédula</label>
+            <input type="text" id="cedulaInput">
+        </div>
+        <div class="campo">
+            <label>Correo</label>
+            <input type="email" id="correoInput">
+        </div>
+        <div class="campo">
+            <label>Dirección</label>
+            <input type="text" id="direccionInput">
+        </div>
+        <div class="campo">
+            <label>Rol</label>
+            <input type="number" id="rolInput" min="1" max="2" placeholder="1=Admin, 2=Cliente">
+        </div>
+
+        <!-- Mensaje de error -->
+        <div id="mensajeError" class="mensaje-error oculto"></div>
+
+        <button id="btnGuardarUsuario" class="btnGuardar">
+            <span class="material-symbols-outlined">person_add</span>
+            Agregar nuevo usuario
+        </button>
+    </div>
+</div>
+
+<!-- MODAL PARA EDITAR USUARIO -->
+<div id="modalEditarUsuario" class="modal oculto">
+    <h2>Editar Usuario</h2>
+
+    <div class="modal-form">
+        <div class="campo">
+            <label>Nombre completo:</label>
+            <input type="text" id="editarNombre">
+        </div>
+        <div class="campo">
+            <label>Cédula:</label>
+            <input type="text" id="editarCedula">
+        </div>
+        <div class="campo">
+            <label>Correo:</label>
+            <input type="email" id="editarCorreo">
+        </div>
+        <div class="campo">
+            <label>Dirección:</label>
+            <input type="text" id="editarDireccion">
+        </div>
+        <div class="campo">
+            <label>Rol:</label>
+            <input type="number" id="editarRol" min="1" max="2" placeholder="1=Admin, 2=Cliente">
+        </div>
+        <div class="campo">
+            <label>Estado:</label>
+            <select id="editarEstado">
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+            </select>
+        </div>
+    </div>
+
+    <button id="btnActualizarUsuario">Actualizar Usuario</button>
+    <button id="btnCerrarEditar">Cerrar</button>
+</div>
+
+
+</div>
 
         <!---Este Script espara el Login POR FAVOR NO BORRAR, si tienen problemas me avisan-->
         <script src="/JS/Sesion.js"></script>
+        <script src="/JS/usuario.js"></script>
     </body>
 </html>

@@ -1,0 +1,330 @@
+/* ----------- BODY ----------- */
+body.Incio {
+    background-color: aliceblue;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    font-family: "Inter", sans-serif;
+}
+
+/* ----------- NAVBAR ----------- */
+.Navbar {
+    width: 220px;
+    background-color: #ffffff;
+    color: #060023;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.titulo {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3000FF;
+    margin-bottom: 15px;
+}
+
+.titulo img {
+    width: 50px;
+}
+
+.titulo p {
+    margin: 0;
+    font-weight: 600;
+    color: #060023;
+}
+
+.Navbar nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.Navbar nav ul li {
+    margin: 8px 0;
+}
+
+.Navbar nav ul li a {
+    font-family: "Inter", sans-serif;
+    display: block;
+    color: #060023;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.5s ease;
+}
+
+.Navbar nav ul li a:hover,
+.Navbar nav ul li a.active {
+    background-color: #2100b6;
+    color: #f0f8ff;
+    padding-left: 20px;
+}
+
+/* ----------- HEADER ----------- */
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 69px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: calc(100% - 220px);
+    background-color: white;
+    border-bottom: 2px solid #3000FF;
+    padding-right: 20px;
+    z-index: 10;
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+    color: #060023;
+    font-size: 32px;
+    transition: 0.3s ease;
+    margin-right: 5px;
+}
+
+.material-symbols-outlined:hover {
+    color: #3000FF;
+}
+
+/* ----------- MAIN ----------- */
+.main {
+    margin-left: 270px;
+    margin-top: 69px;
+    padding: 20px;
+    width: calc(100% - 220px);
+    min-height: calc(100vh - 69px);
+    box-sizing: border-box;
+}
+
+/* ----------- INFO ----------- */
+.Info h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #140169;
+}
+
+.Info p {
+    font-family: "Inter", sans-serif;
+    color: #919bb5;
+}
+
+/* ENCABEZADOS */
+.roles-header {
+    font-family: "Inter", sans-serif;
+    display: grid;
+    grid-template-columns: 60px 1fr 160px;
+    padding: 15px 20px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+    background-color: #f0f1ff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* ROL CARD = FILA */
+.rol-card {
+    display: grid;
+    grid-template-columns: 60px 1fr 160px;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    box-shadow: #2f00ff31 0 4px 10px;
+    position: relative;
+}
+
+/* Acciones */
+.col-accionesRol {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-opciones-rol {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+/* Menú opciones */
+.menu-opciones {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 150px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: #2f00ff31 0 4px 10px;
+    padding: 8px 0;
+    z-index: 200;
+}
+
+.menu-opciones p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.menu-opciones p:hover {
+    background: #f2f2f2;
+}
+
+/* Formulario y botones */
+.form .registro {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-top: 10px;
+    border: 2px solid #3000FF;
+}
+
+.btnRegistrar-rol {
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;       
+    padding: 15px 25px;     
+    min-width: 250px;           
+    min-height: 60px;           
+    text-align: center;
+    cursor: pointer;
+    background-color: #5384ff;   /* Color principal */
+    color: #ffffff;
+    margin-left: 200px;
+    margin-top: 30px;
+    margin-right: 6px;
+    transition: all 0.3s ease;   /* Transición más suave */
+}
+
+.btnRegistrar-rol:hover {
+    background-color: #2100b6;  /* Cambio de color al pasar el mouse */
+}
+
+
+/* --- FONDO OSCURO --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 900;
+}
+
+.oculto {
+    display: none !important;
+}
+
+/* --- MODAL --- */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 6px 18px #2f00ff31;
+    font-family: "Inter", sans-serif;
+    z-index: 1000;
+}
+
+.modal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* GRUPO DE INPUTS */
+.grupo-opciones-caja {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.modal .grupo {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.modal label {
+    font-size: 14px;
+    color: #4a4a4a;
+    font-weight: 500;
+}
+
+.modal input,
+.modal select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #3000FF;
+    font-size: 15px;
+    background: white;
+    outline: none;
+    font-family: "Inter", sans-serif;
+}
+
+/* BOTÓN */
+.btnGuardar-rol {
+    width: 100%;
+    padding: 12px;
+    background: #5384ff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 10px;
+}
+
+.btnGuardar-rol:hover {
+    background: #3a6cf5;
+}
+
+/* Mensaje de error */
+.mensaje-error {
+    background-color: #ffdddd;
+    color: #a33;
+    border: 1px solid #a33;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
